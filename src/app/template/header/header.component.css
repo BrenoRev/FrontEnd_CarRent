@@ -1,5 +1,5 @@
 .header{
-    height: 85px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -18,7 +18,7 @@ i{
     font-weight: 500;
 }
 .header .logo {
-    height: 250px;
+    height: 200px;
 }
 
 .header .title-group{
