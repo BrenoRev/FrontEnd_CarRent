@@ -1,129 +1,21 @@
 <div class="side">
-<mat-card class="example-card" (click)="alerta()">
-    <img mat-card-image src="https://images.kavak.services/images/157219/EXTERIOR-frontSidePilotNear-1641374016396.jpeg?d=540x310" alt="Car">
+<mat-card class="example-card" (click)="alerta()" *ngFor="let carro of cars">
+    <img mat-card-image src="{{carro.photo}}" alt="Car">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Ford Ka TI-VCT SE SEDAN</mat-card-title>
-      <mat-card-subtitle>2020 - 24.017 km - São Paulo</mat-card-subtitle>
+      <mat-card-title>{{carro.name}}</mat-card-title>
+      <mat-card-subtitle>Modelo: {{carro.model.name}} | Marca: {{carro.brand.name}} | Ano: {{carro.ageCar}} | KM: {{carro.km}}</mat-card-subtitle>
     </mat-card-header>
     
     <mat-card-content>
-      <p>
-        INFOS
-      </p>
+      <h1 style="font-weight: 500;">R$ {{carro.price}}</h1>
+      <h4>Tipo de Carro : {{carro.carType}}</h4>
+      <h4>Cor : {{carro.carColor}}</h4>
+      <h4>Transmissão : {{carro.carTransmission}}</h4>
+      <h4>Combustível : {{carro.carFuel}}</h4>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-  <mat-card class="example-card" (click)="alerta()">
-    <img mat-card-image src="https://images.kavak.services/images/157219/EXTERIOR-frontSidePilotNear-1641374016396.jpeg?d=540x310" alt="Car">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Ford Ka TI-VCT SE SEDAN</mat-card-title>
-      <mat-card-subtitle>2020 - 24.017 km - São Paulo</mat-card-subtitle>
-    </mat-card-header>
-    
-    <mat-card-content>
-      <p>
-        INFOS
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-  <mat-card class="example-card" (click)="alerta()">
-    <img mat-card-image src="https://images.kavak.services/images/157219/EXTERIOR-frontSidePilotNear-1641374016396.jpeg?d=540x310" alt="Car">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Ford Ka TI-VCT SE SEDAN</mat-card-title>
-      <mat-card-subtitle>2020 - 24.017 km - São Paulo</mat-card-subtitle>
-    </mat-card-header>
-    
-    <mat-card-content>
-      <p>
-        INFOS
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-  <mat-card class="example-card" (click)="alerta()">
-    <img mat-card-image src="https://images.kavak.services/images/157219/EXTERIOR-frontSidePilotNear-1641374016396.jpeg?d=540x310" alt="Car">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Ford Ka TI-VCT SE SEDAN</mat-card-title>
-      <mat-card-subtitle>2020 - 24.017 km - São Paulo</mat-card-subtitle>
-    </mat-card-header>
-    
-    <mat-card-content>
-      <p>
-        INFOS
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-  <mat-card class="example-card" (click)="alerta()">
-    <img mat-card-image src="https://images.kavak.services/images/157219/EXTERIOR-frontSidePilotNear-1641374016396.jpeg?d=540x310" alt="Car">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Ford Ka TI-VCT SE SEDAN</mat-card-title>
-      <mat-card-subtitle>2020 - 24.017 km - São Paulo</mat-card-subtitle>
-    </mat-card-header>
-    
-    <mat-card-content>
-      <p>
-        INFOS
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-
-  <mat-card class="example-card" (click)="alerta()">
-    <img mat-card-image src="https://images.kavak.services/images/157219/EXTERIOR-frontSidePilotNear-1641374016396.jpeg?d=540x310" alt="Car">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Ford Ka TI-VCT SE SEDAN</mat-card-title>
-      <mat-card-subtitle>2020 - 24.017 km - São Paulo</mat-card-subtitle>
-    </mat-card-header>
-    
-    <mat-card-content>
-      <p>
-        INFOS
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-  <mat-card class="example-card" (click)="alerta()">
-    <img mat-card-image src="https://images.kavak.services/images/157219/EXTERIOR-frontSidePilotNear-1641374016396.jpeg?d=540x310" alt="Car">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Ford Ka TI-VCT SE SEDAN</mat-card-title>
-      <mat-card-subtitle>2020 - 24.017 km - São Paulo</mat-card-subtitle>
-    </mat-card-header>
-    
-    <mat-card-content>
-      <p>
-        INFOS
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+      <p *ngIf="carro.ipva" style="font-weight: 600; float:right; border: 2px dashed rgb(103, 223, 223); padding: 10px">IPVA PAGO</p>
     </mat-card-actions>
   </mat-card>
 </div>

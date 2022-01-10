@@ -1,7 +1,8 @@
+import { Car } from './../model/Car';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppConstants } from '../AppConstants';
-import { Car } from '../model/Car';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,23 +11,23 @@ export class CarService {
 
   constructor(private http: HttpClient) { }
 
-  getBrands(){
+  getBrands() :Observable<any>{
     return this.http.get(AppConstants.baseServidor + "api/v1/brand");
   }
 
-  getModelByBrand(brand: string){
+  getModelByBrand(brand: string):Observable<any>{
     return this.http.get(AppConstants.baseServidor + "api/v1/model/" + brand);
   }
 
-  getAllModels(){
+  getAllModels() : Observable<any>{
     return this.http.get(AppConstants.baseServidor + "api/v1/model");
   }
 
-  getCars(){
+  getCars():Observable<any>{
     return this.http.get(AppConstants.baseServidor + "api/v1/car/");
   }
 
-  getCarPageable(page: number){
+  getCarPageable(page: number):Observable<any>{
     return this.http.get(AppConstants.baseServidor + "api/v1/car/pagination/?page=" + page +"&size=30" + "&sort=price,desc");
   }
 

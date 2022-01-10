@@ -10,6 +10,7 @@ import { FooterComponent } from './template/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { MatButtonModule } from "@angular/material/button";
     MatIconModule,
     MatToolbarModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
