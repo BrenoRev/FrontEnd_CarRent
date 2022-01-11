@@ -25,6 +25,6 @@ export class HomeComponent implements OnInit {
   }
 
   alerta() {
-    alert('Alerta');
+    alert("Carro reservado com sucesso!");
   }
 }

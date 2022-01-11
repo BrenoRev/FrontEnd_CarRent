@@ -13,7 +13,7 @@
         <div class="form-group col-md-12">
             <label for="ageCar">Ano</label>
             <span style="color: red;"*ngIf="anoValidate.invalid && anoValidate.touched">*</span>
-            <input [(ngModel)]="carro.ageCar" #anoValidate="ngModel" type="number" class="form-control" id="ageCar" autocomplete="false" required="true" name="ageCar" mask="00000.">
+            <input [(ngModel)]="carro.ageCar" #anoValidate="ngModel" type="number" class="form-control" id="ageCar" autocomplete="false" required="true" name="ageCar">
         </div>
     </div>
 
@@ -21,7 +21,7 @@
         <div class="form-group col-md-12">
             <label for="km">KM</label>
             <span style="color: red;"*ngIf="kmValidate.invalid && kmValidate.touched">*</span>
-            <input [(ngModel)]="carro.km" #kmValidate="ngModel" type="number" class="form-control" id="km" autocomplete="false" required="true" name="km" mask="separator.2" thousandSeparator=".">
+            <input [(ngModel)]="carro.km" #kmValidate="ngModel" type="number" class="form-control" id="km" autocomplete="false" required="true" name="km">
         </div>
     </div>
 
@@ -29,7 +29,7 @@
         <div class="form-group col-md-12">
             <label for="price">Valor</label>
             <span style="color: red;"*ngIf="valorValidate.invalid && valorValidate.touched">*</span>
-            <input [(ngModel)]="carro.price" #valorValidate="ngModel" type="number" class="form-control" id="price" autocomplete="false" required="true" name="price" mask="separator.2" thousandSeparator=".">
+            <input [(ngModel)]="carro.price" #valorValidate="ngModel" type="number" class="form-control" id="price" autocomplete="false" required="true" name="price">
         </div>
     </div>
 

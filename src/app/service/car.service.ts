@@ -39,6 +39,10 @@ export class CarService {
     return this.http.get(AppConstants.baseServidor + "api/v1/model/");
   }
 
+  getCarById(id: number):Observable<any>{
+    return this.http.get(AppConstants.baseServidor + "api/v1/car/" + id);
+  }
+  
   getCars():Observable<any>{
     return this.http.get(AppConstants.baseServidor + "api/v1/car/");
   }

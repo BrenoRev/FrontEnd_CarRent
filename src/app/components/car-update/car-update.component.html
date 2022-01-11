@@ -1,1 +1,120 @@
-<p>car-update works!</p>
+<div class="centralizar">
+    <form class="padding-left" #formValidate="ngForm">
+    
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="name">Nome</label>
+                <span style="color: red;"*ngIf="nomeValidate.invalid && nomeValidate.touched">*</span>
+                <input [(ngModel)]="carro.name" #nomeValidate="ngModel" type="text" class="form-control" id="name" autocomplete="false" required="true" name="name">
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="ageCar">Ano</label>
+                <span style="color: red;"*ngIf="anoValidate.invalid && anoValidate.touched">*</span>
+                <input [(ngModel)]="carro.ageCar" #anoValidate="ngModel" type="number" class="form-control" id="ageCar" autocomplete="false" required="true" name="ageCar">
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="km">KM</label>
+                <span style="color: red;"*ngIf="kmValidate.invalid && kmValidate.touched">*</span>
+                <input [(ngModel)]="carro.km" #kmValidate="ngModel" type="number" class="form-control" id="km" autocomplete="false" required="true" name="km">
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="price">Valor</label>
+                <span style="color: red;"*ngIf="valorValidate.invalid && valorValidate.touched">*</span>
+                <input [(ngModel)]="carro.price" #valorValidate="ngModel" type="number" class="form-control" id="price" autocomplete="false" required="true" name="price">
+            </div>
+        </div>
+    
+    
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="photo">Link da Foto</label>
+                <span style="color: red;"*ngIf="photoValidate.invalid && photoValidate.touched">*</span>
+                <input [(ngModel)]="carro.photo" #photoValidate="ngModel" type="text" class="form-control" id="photo" autocomplete="false" required="true" name="photo">
+            </div>
+        </div>
+    
+    
+        <div class="form-group">
+            <label for="carType">Tipo de Carro</label>
+            <span style="color: red;"*ngIf="carTypeValidate.invalid && carTypeValidate.touched">*</span>
+            <select name="carType" id="carType" 
+            #carTypeValidate="ngModel" class="form-control" required="true" [(ngModel)]="carro.carType">
+            <option  [ngValue]="type" *ngFor="let type of carTypes">{{type}}</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="carTransmission">Transmissão</label>
+            <span style="color: red;"*ngIf="carTransmissionValidate.invalid && carTransmissionValidate.touched">*</span>
+            <select name="carTransmission" id="carTransmission" 
+            #carTransmissionValidate="ngModel" class="form-control" required="true" [(ngModel)]="carro.carTransmission">
+            <option  [ngValue]="transmission" *ngFor="let transmission of carTransmissions">{{transmission}}</option>
+            </select>
+        </div>
+            <div class="form-group">
+                <label for="carColor">Cor</label>
+                <span style="color: red;"*ngIf="carColorValidate.invalid && carColorValidate.touched">*</span>
+                <select name="carColor" id="carColor" 
+                #carColorValidate="ngModel" class="form-control" required="true" [(ngModel)]="carro.carColor">
+                <option  [ngValue]="cor" *ngFor="let cor of carColors">{{cor}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                    <label for="carFuel">Combustível</label>
+                    <span style="color: red;"*ngIf="carFuelValidate.invalid && carFuelValidate.touched">*</span>
+                    <select name="carFuel" id="carFuel" 
+                    #carFuelValidate="ngModel" class="form-control" required="true" [(ngModel)]="carro.carFuel">
+                    <option [ngValue]="fuel" *ngFor="let fuel of carFuels">{{fuel}}</option>
+                    </select>
+            </div>
+        <div class="form-group">
+            <label for="brand">Marca</label>
+            <span style="color: red;"*ngIf="brandValidate.invalid && brandValidate.touched">*</span>
+            <select name="brand" id="brand" 
+            #brandValidate="ngModel" class="form-control" required="true" [(ngModel)]="carro.brand">
+            <option [ngValue]="brand" *ngFor="let brand of brands">{{brand.name}} </option>
+            </select>  
+            <button (click)="getModels()">Get Models</button>
+        </div>
+    
+        <div class="form-group">
+            <label for="model">Modelo</label>
+            <span style="color: red;"*ngIf="modelValidate.invalid && modelValidate.touched">*</span>
+            <select name="model" id="model" 
+            #modelValidate="ngModel" class="form-control" required="true" [(ngModel)]="carro.model">
+            <option  [ngValue]="model" *ngFor="let model of models">{{model.name}}</option>
+            </select>  
+        </div>
+    
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="ipva">IPVA Gratis?</label>
+            <input [(ngModel)]="carro.ipva"  type="checkbox" checked class="form-control" id="ipva" autocomplete="false" name="ipva">
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="reserved">Reservado?</label>
+            <input [(ngModel)]="carro.reserved" type="checkbox" checked class="form-control" id="reserved" autocomplete="false" name="reserved">
+        </div>
+    
+        
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <button class="btn btn-primary" (click)="updateCar()" [disabled]="formValidate.invalid"> Atualizar </button>
+                <button [routerLink]="['/admin']" class="btn btn-warning padding-left"> Voltar</button>
+            </div>
+        </div>
+    </div>
+    </form>
+    </div>

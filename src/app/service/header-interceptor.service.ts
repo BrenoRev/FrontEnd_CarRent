@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
-import { tap } from 'rxjs/operators';
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { catchError, tap } from 'rxjs/operators';
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Injectable, NgModule } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,39 +11,52 @@ import { Observable } from 'rxjs';
 export class HeaderInterceptorService implements HttpInterceptor{
 
   constructor(private router: Router) { }
-
+  
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    
+    // Verificar se existe a token e mandar no header da requisição pro back-end
+      if(localStorage.getItem('token') !== null){
+        const token = 'Bearer ' + localStorage.getItem('token');
 
-    if(req.method == 'GET') {
-      return next.handle(req);
+        if(req.method == 'GET') {
+          return next.handle(req);
+        }
+        
+        // Altera a requisição padrão do angular e coloca no header um authorization com a token
+        const tokenRequest = req.clone({
+          headers : req.headers.set('Authorization', token)
+        });
+        
+        // Se existir manda a autorização com a token
+        return next.handle(tokenRequest).pipe(
+          tap((event: HttpEvent<any>) => {
+            if(event instanceof HttpResponse && (event.status === 200 || event.status === 201)) {
+              //alert('Sucesso: ' + event.status);
+            }
+          }),catchError(this.processaError))
+      }else{
+        // Se não, manda a requisição original
+        return next.handle(req).pipe(catchError(this.processaError));
+      }
+  }
+  
+  processaError(error: HttpErrorResponse) {
+    let errorMessage = 'Erro Desconhecido';
+
+    if(error.error instanceof ErrorEvent) {
+      errorMessage = `Erro: ${error.error.message}`;
     }
-      //enviar token no header
-      const token = localStorage.getItem('token');
-      const authReq = req.clone({
-        headers: req.headers.set('Authorization', 'Bearer ' + token)
-      });
-      return next.handle(authReq).pipe(
-        tap(
-          event => {
-            if (event instanceof HttpResponse) {
-              alert('Sucessfully');
-            }
-          },
-          error => {
-            if(error.status == 403){
-              window.alert("Acesso expirado, faça o login novamente.");
-              localStorage.clear();
-              this.router.navigateByUrl('login');
-            }else{
-              return;
-            }
-          }
-        )
-      );
-
+    else if(error.status === 403){
+      errorMessage = "Acesso expirado, faça o login novamente."
+    }else{
+      errorMessage = `Código: ${error.error.code == undefined ? '000' : error.error.code } , Mensagem: ${error.error.message == undefined ? "Erro Desconhecido" : error.error.message}`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
   }
   
 }
+
 @NgModule({
   providers : [{
     provide: HTTP_INTERCEPTORS,
