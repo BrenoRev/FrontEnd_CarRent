@@ -14,8 +14,10 @@
     text-decoration: none;
 }
 i{
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 .header .logo {
     height: 200px;

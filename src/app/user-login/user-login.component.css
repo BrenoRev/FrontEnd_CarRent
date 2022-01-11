@@ -1,0 +1,34 @@
+
+h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.move{
+    margin-top: 5%;
+}
+p{
+    font-size: 20px;
+}
+
+.formulario{
+    border-radius: 10%;
+    padding: 100px;
+    margin: auto;
+    width: 600px;
+    height: 100%;
+}
+
+#send{
+    margin-top: 15px;
+}
+
+.marg{
+    text-align: center;
+    margin-top: 5px;
+}
+
+.form-group{
+    margin-bottom: 10px;
+}
