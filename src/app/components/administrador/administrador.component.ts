@@ -13,16 +13,20 @@ export class AdministradorComponent implements OnInit {
 
   cars: Array<Car> = [];
   displayedColumns = ['id','name','price','edit','delete'];
-
+  p!: number;
+  total!: number;
+  
   ngOnInit(): void {
-    this.getCars();
+    this.carregarPagina(1);
   }
 
-  getCars() {
-    this.service.getCars().subscribe(data => {
-      this.cars = data;
-    });
+  carregarPagina(pagina: number){
+    this.service.getCarPageable(pagina-1).subscribe((data) => {
+      this.cars = data.content
+      this.total = data.totalElements;
+    })
   }
+
 
   delete(id: number){
     if(confirm ("Deseja realmente excluir o usuário?")){

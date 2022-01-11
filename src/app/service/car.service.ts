@@ -42,13 +42,13 @@ export class CarService {
   getCarById(id: number):Observable<any>{
     return this.http.get(AppConstants.baseServidor + "api/v1/car/" + id);
   }
-  
+
   getCars():Observable<any>{
     return this.http.get(AppConstants.baseServidor + "api/v1/car/");
   }
 
   getCarPageable(page: number):Observable<any>{
-    return this.http.get(AppConstants.baseServidor + "api/v1/car/pagination/?page=" + page +"&size=30" + "&sort=price,desc");
+    return this.http.get(AppConstants.baseServidor + "api/v1/car/pagination/?page=" + page +"&size=15" + "&sort=price,desc");
   }
 
   saveCar(car: Car){

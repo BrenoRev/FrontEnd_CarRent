@@ -10,18 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   cars!: Array<Car>;
-
+  p!: number;
+  total!: number;
+  
   constructor(private service: CarService) { }
 
   ngOnInit(): void {
-    this.getCars();
+    this.carregarPagina(1);
   }
 
-  getCars() {
-    this.service.getCars().subscribe(data => {
-      console.log(data)
-      this.cars = data;
-    });
+  carregarPagina(pagina: number){
+    console.log(pagina);
+    this.service.getCarPageable(pagina-1).subscribe((data) => {
+      this.cars = data.content
+      this.total = data.totalElements;
+    })
   }
 
   alerta() {

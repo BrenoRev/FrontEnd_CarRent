@@ -1,5 +1,5 @@
 <div class="mat-elevation-z4">
-    <table class="table" mat-table [dataSource]="cars">
+    <table class="table" mat-table [dataSource]="cars | paginate:{ itemsPerPage:15, currentPage: p, totalItems : total }">
       <!-- Id Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef >Id</th>
@@ -37,7 +37,9 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    
+    <div>
+      <pagination-controls (pageChange)="carregarPagina(p = $event)"></pagination-controls>
+    </div>
   </div>
   <button class="btn-outline-dark" style="width: 300px; height: 100px; font-size: 25px;" routerLink="/admin/create">CRIAR ANUNCIO DE VEÍCULO</button>
   

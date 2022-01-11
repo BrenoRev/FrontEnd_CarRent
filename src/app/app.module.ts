@@ -20,6 +20,7 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
 import { HttpInterceptorModule } from './service/header-interceptor.service';
 import { CarCreateComponent } from './components/car-create/car-create.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -51,6 +52,7 @@ const maskConfig: Partial<IConfig> = {
     MatTableModule,
     HttpInterceptorModule,
     NgxMaskModule.forRoot(maskConfig),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
