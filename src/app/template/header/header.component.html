@@ -1,44 +1,34 @@
-<mat-toolbar class="header">
-
-    <span>
-        <a routerLink="/car">
-            <img class="logo" src="/assets/img/kavak-logo.png" alt="Logo">
-        </a>
+<div> 
+    <mat-toolbar color="primary">
+      <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <a mat-button class="companyName" routerLink="/">
+            <a routerLink="/car">
+                <img class="logo" src="/assets/img/kavak_logo.png" alt="Logo">
+            </a>
+      </a>
+      <span class="example-spacer"></span>
+      <div fxShow="true" fxHide.lt-md="true">
+        <a mat-button routerLink="/car">Comprar Carro</a>
+        <a mat-button routerLink="/car">Sobre nós</a>
+        <a mat-button routerLink="/login" *ngIf="!online()"><mat-icon>person</mat-icon>Minha Conta</a>
+        <a mat-button routerLink="/admin" *ngIf="online()"><mat-icon>person</mat-icon>Área de Administração <button class="alert-danger" style="margin-left: 10px;" (click)="deslogar()">Deslogar</button></a>
+        
+      </div>
+      <span class="title-group" *ngIf="online()">
+       
     </span>
-    <span class="title-group">
-        <a routerLink="/car">
-            <mat-icon> directions_car</mat-icon>
-            <i class="diminuir">Comprar Carro</i>
-        </a>
-    </span>
-
-    <span class="title-group">
-        <a routerLink="/car">
-            <mat-icon> attach_money</mat-icon>
-            <i class="diminuir">Vender Carro</i>
-        </a>
-    </span>
-    
-    <span class="title-group">
-        <a routerLink="/car">
-            <mat-icon>keyboard_arrow_down</mat-icon>
-            <i class="diminuir">Sobre nós</i>
-        </a>
-    </span>
-
-    <span class="title-group" *ngIf="!online()">
-        <a routerLink="/login">
-            <mat-icon>person</mat-icon>
-            <i class="diminuir">Minha Conta</i>
-        </a>
-    </span>
-
-    <span class="title-group" *ngIf="online()">
-        <a routerLink="/admin">
-            <mat-icon>person</mat-icon>
-            <i class="diminuir">ÁREA DE ADMIN</i>
-            <button style="margin-left: 10px;" (click)="deslogar()">Deslogar</button>
-        </a>
-    </span>
-
-</mat-toolbar>
+    </mat-toolbar>
+  
+      <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+        <div fxLayout="column">
+            <a mat-button routerLink="/car">Comprar Carro</a>
+            <a mat-button routerLink="/car">Sobre nós</a>
+            <a mat-button routerLink="/login" *ngIf="!online()"><mat-icon>person</mat-icon>Minha Conta</a>
+            <a mat-button routerLink="/admin" *ngIf="online()"><mat-icon>person</mat-icon>Área de Administração <button class="alert-danger" style="margin: 10px; border-radius: 20px;" (click)="deslogar()">Deslogar</button></a>
+        </div>
+      </mat-sidenav>
+  </div>

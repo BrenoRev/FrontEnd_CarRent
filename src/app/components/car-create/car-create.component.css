@@ -5,8 +5,17 @@
 .centralizar{
     margin-top: 20px;
     display: flex;
-    flex-grow: inherit;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    float: left;
+}
+.central{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    float: right;
+ 
+}
+
+@media screen and (max-width: 600px) {
+    
 }

@@ -50,27 +50,22 @@ export class CarCreateComponent implements OnInit {
   ngOnInit(): void {
 
     this.service.getBrands().subscribe(data => {
-      console.log(data)
       this.brands = data;
     });
 
     this.service.getColors().subscribe(data => {
-      console.log(data)
       this.carColors = data;
     });
 
     this.service.getFuels().subscribe(data => {
-      console.log(data)
       this.carFuels = data;
     });
 
     this.service.getCarTypes().subscribe((data: String[]) => {
-      console.log(data)
       this.carTypes = data;
     });
 
     this.service.getTransmissions().subscribe(data => {
-      console.log(data)
       this.carTransmissions = data;
     });
 
@@ -78,14 +73,14 @@ export class CarCreateComponent implements OnInit {
 
   salvarCarro(){
     this.service.saveCar(this.carro).subscribe(data => {
-      console.log(data)
+      
     });
   }
 
   getModels(){
     console.log("fez")
     this.service.getModelByBrand(this.carro.brand.name!).subscribe(data => {
-      console.log(data)
+      
       this.models = data;
     });
   }

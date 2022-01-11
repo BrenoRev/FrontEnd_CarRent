@@ -1,6 +1,6 @@
-<div class="centralizar">
-<form class="padding-left" #formValidate="ngForm">
 
+<form class="padding-left" #formValidate="ngForm">
+    <div class="central">
     <div class="form-row">
         <div class="form-group col-md-12">
             <label for="name">Nome</label>
@@ -60,6 +60,9 @@
         <option  [ngValue]="transmission" *ngFor="let transmission of carTransmissions">{{transmission}}</option>
         </select>
     </div>
+    </div>
+    <div class="centralizar2">
+    </div>
         <div class="form-group">
             <label for="carColor">Cor</label>
             <span style="color: red;"*ngIf="carColorValidate.invalid && carColorValidate.touched">*</span>
@@ -107,6 +110,7 @@
         <label for="reserved">Reservado?</label>
         <input [(ngModel)]="carro.reserved" type="checkbox" checked class="form-control" id="reserved" autocomplete="false" name="reserved">
     </div>
+</div>
 
     
     <div class="form-row">
@@ -116,6 +120,4 @@
             <button [routerLink]="['/admin']" class="btn btn-warning padding-left"> Voltar</button>
         </div>
     </div>
-</div>
 </form>
-</div>

@@ -21,6 +21,8 @@ import { HttpInterceptorModule } from './service/header-interceptor.service';
 import { CarCreateComponent } from './components/car-create/car-create.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -35,7 +37,8 @@ const maskConfig: Partial<IConfig> = {
     UserLoginComponent,
     AdministradorComponent,
     CarUpdateComponent,
-    CarCreateComponent
+    CarCreateComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,9 @@ const maskConfig: Partial<IConfig> = {
     MatTableModule,
     HttpInterceptorModule,
     NgxMaskModule.forRoot(maskConfig),
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatSidenavModule, 
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
