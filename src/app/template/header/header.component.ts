@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  online(){
+    if(localStorage.getItem('token') != null){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  deslogar(){
+    localStorage.clear();
+    this.router.navigateByUrl('car')
+  }
 }

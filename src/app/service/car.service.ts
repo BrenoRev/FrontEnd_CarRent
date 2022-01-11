@@ -1,4 +1,4 @@
-import { Car } from './../model/Car';
+import { Car } from '../components/model/Car';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppConstants } from '../AppConstants';

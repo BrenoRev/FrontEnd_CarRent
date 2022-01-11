@@ -26,10 +26,18 @@
         </a>
     </span>
 
-    <span class="title-group ">
+    <span class="title-group" *ngIf="!online()">
         <a routerLink="/login">
             <mat-icon>person</mat-icon>
             <i class="diminuir">Minha Conta</i>
+        </a>
+    </span>
+
+    <span class="title-group" *ngIf="online()">
+        <a routerLink="/admin">
+            <mat-icon>person</mat-icon>
+            <i class="diminuir">ÁREA DE ADMIN</i>
+            <button style="margin-left: 10px;" (click)="deslogar()">Deslogar</button>
         </a>
     </span>
 

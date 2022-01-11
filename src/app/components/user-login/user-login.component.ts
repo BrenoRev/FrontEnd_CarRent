@@ -1,5 +1,5 @@
-import { UserService } from './../service/user.service';
-import { Usuario } from './../model/Usuario';
+import { UserService } from '../../service/user.service';
+import { Usuario } from '../model/Usuario';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -20,9 +20,6 @@ export class UserLoginComponent implements OnInit {
   }
 
   login(){
-    this.service.login(this.usuario).subscribe(
-      (response) => {
-        console.log(response);
-      });
+    this.service.login(this.usuario);
   }
 }
