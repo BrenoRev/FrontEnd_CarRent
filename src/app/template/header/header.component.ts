@@ -13,14 +13,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  online(){
-    if(localStorage.getItem('token') != null){
+  online() {
+    if (localStorage.getItem('token') != null) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
-  deslogar(){
+  deslogar() {
     localStorage.clear();
     this.router.navigateByUrl('car')
   }

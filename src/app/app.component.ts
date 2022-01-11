@@ -6,20 +6,20 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
-  constructor(private router: Router){
+  constructor(private router: Router) {
 
-}
+  }
   ngOnInit(): void {
 
     // Verificar a token do usuário
-    if(localStorage.getItem('token') == null){
+    if (localStorage.getItem('token') == null) {
       this.router.navigateByUrl('login')
     }
   }
 
-  sair(): void{
+  sair(): void {
     localStorage.clear();
     this.router.navigateByUrl('login')
   }

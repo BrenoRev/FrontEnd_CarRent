@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserLoginComponent implements OnInit {
 
-  usuario : Usuario = {
+  usuario: Usuario = {
     login: '',
     senha: ''
   }
@@ -19,7 +19,7 @@ export class UserLoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(){
+  login() {
     this.service.login(this.usuario);
   }
 }

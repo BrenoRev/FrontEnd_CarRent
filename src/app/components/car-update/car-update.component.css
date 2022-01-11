@@ -1,8 +1,8 @@
-.padding-left{
+.padding-left {
     margin-left: 5px;
 }
 
-.centralizar{
+.centralizar {
     margin-top: 20px;
     display: flex;
     flex-grow: inherit;

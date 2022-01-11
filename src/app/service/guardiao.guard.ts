@@ -16,5 +16,5 @@ export class GuardiaoGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return this.userService.userAutenticado();
   }
-  
+
 }

@@ -12,5 +12,5 @@ export class AppConstants {
         return this.baseServidor + "api/v1/user/register"
     }
 
-    
+
 }

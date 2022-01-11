@@ -12,16 +12,16 @@ export class HomeComponent implements OnInit {
   cars!: Array<Car>;
   p!: number;
   total!: number;
-  
+
   constructor(private service: CarService) { }
 
   ngOnInit(): void {
     this.carregarPagina(1);
   }
 
-  carregarPagina(pagina: number){
+  carregarPagina(pagina: number) {
     console.log(pagina);
-    this.service.getCarPageable(pagina-1).subscribe((data) => {
+    this.service.getCarPageable(pagina - 1).subscribe((data) => {
       this.cars = data.content
       this.total = data.totalElements;
     })

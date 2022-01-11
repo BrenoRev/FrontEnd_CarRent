@@ -1,18 +1,18 @@
-
-h1{
+h1 {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
 }
 
-.move{
+.move {
     margin-top: 5%;
 }
-p{
+
+p {
     font-size: 20px;
 }
 
-.formulario{
+.formulario {
     padding: 20px;
     margin: auto;
     border-radius: 10%;
@@ -20,15 +20,15 @@ p{
     height: 40vh;
 }
 
-#send{
+#send {
     margin-top: 15px;
 }
 
-.marg{
+.marg {
     text-align: center;
     margin-top: 5px;
 }
 
-.form-group{
+.form-group {
     margin-bottom: 10px;
 }

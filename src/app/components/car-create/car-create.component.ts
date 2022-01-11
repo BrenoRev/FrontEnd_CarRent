@@ -17,19 +17,19 @@ export class CarCreateComponent implements OnInit {
   };
 
   brand: Brand = {
-    id : 0,
-    
+    id: 0,
+
   }
 
   color!: string
-  brands : Array<Brand> = [];
-  models : Array<Model> = [];
+  brands: Array<Brand> = [];
+  models: Array<Model> = [];
   carColors: Array<String> = [];
   carTypes: Array<String> = []
   carTransmissions: Array<String> = []
   carFuels: Array<String> = []
 
-  carro : Car = {
+  carro: Car = {
     model: this.model,
     brand: this.brand,
     name: '',
@@ -71,35 +71,35 @@ export class CarCreateComponent implements OnInit {
 
   }
 
-  salvarCarro(){
+  salvarCarro() {
     this.service.saveCar(this.carro).subscribe(data => {
-      
+
     });
   }
 
-  getModels(){
+  getModels() {
     console.log("fez")
     this.service.getModelByBrand(this.carro.brand.name!).subscribe(data => {
-      
+
       this.models = data;
     });
   }
-  
-  novo(){
+
+  novo() {
     this.carro.model = {},
-    this.carro.brand = {},
-    this.carro.name= '',
-    this.carro.ageCar= 0,
-    this.carro.km= 0,
-    this.carro.price=0,
-    this.carro.ipva= false,
-    this.carro.reserved= false,
-    this.carro.photo= '',
-    this.carro.carType= '',
-    this.carro.carTransmission= '',
-    this.carro.carColor= '',
-    this.carro.carFuel= ''
+      this.carro.brand = {},
+      this.carro.name = '',
+      this.carro.ageCar = 0,
+      this.carro.km = 0,
+      this.carro.price = 0,
+      this.carro.ipva = false,
+      this.carro.reserved = false,
+      this.carro.photo = '',
+      this.carro.carType = '',
+      this.carro.carTransmission = '',
+      this.carro.carColor = '',
+      this.carro.carFuel = ''
   }
 
- 
+
 }

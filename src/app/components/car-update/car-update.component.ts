@@ -12,26 +12,26 @@ import { Model } from '../model/Model';
 })
 export class CarUpdateComponent implements OnInit {
 
- 
+
   model: Model = {
     name: '',
     id: 0
   };
 
   brand: Brand = {
-    id : 0,
-    
+    id: 0,
+
   }
 
   color!: string
-  brands : Array<Brand> = [];
-  models : Array<Model> = [];
+  brands: Array<Brand> = [];
+  models: Array<Model> = [];
   carColors: Array<String> = [];
   carTypes: Array<String> = []
   carTransmissions: Array<String> = []
   carFuels: Array<String> = []
 
-  carro : Car = {
+  carro: Car = {
     model: this.model,
     brand: this.brand,
     name: '',
@@ -48,8 +48,8 @@ export class CarUpdateComponent implements OnInit {
   };
   sendBrand!: string;
   constructor(private service: CarService,
-              private routeActive: ActivatedRoute,
-              private router: Router) { }
+    private routeActive: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
 
@@ -79,14 +79,14 @@ export class CarUpdateComponent implements OnInit {
 
   }
 
-  updateCar(){
-    this.service.updateCar(parseInt(this.routeActive.snapshot.paramMap.get('id')!),this.carro).subscribe(data => {
+  updateCar() {
+    this.service.updateCar(parseInt(this.routeActive.snapshot.paramMap.get('id')!), this.carro).subscribe(data => {
       window.alert("Carro atualizado com sucesso!")
       this.router.navigateByUrl("/admin")
     });
   }
 
-  getModels(){
+  getModels() {
     console.log("fez")
     this.service.getModelByBrand(this.carro.brand.name!).subscribe(data => {
       this.models = data;
