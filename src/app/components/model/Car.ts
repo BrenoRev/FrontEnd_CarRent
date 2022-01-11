@@ -1,7 +1,6 @@
 import { Brand } from './Brand';
 import { Model } from './Model';
 export interface Car{
-    id: number;
     model : Model;
     brand: Brand;
     name: string;

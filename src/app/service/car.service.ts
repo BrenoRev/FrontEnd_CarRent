@@ -11,8 +11,24 @@ export class CarService {
 
   constructor(private http: HttpClient) { }
 
+  getColors():Observable<any>{
+    	return this.http.get(AppConstants.baseServidor + "api/v1/enums/colors");
+  }
+
+  getFuels():Observable<any>{
+    return this.http.get(AppConstants.baseServidor + "api/v1/enums/fuels");
+  }
+
+  getTransmissions():Observable<any>{
+    return this.http.get(AppConstants.baseServidor + "api/v1/enums/transmissions");
+  }
+
+  getCarTypes():Observable<any>{
+    return this.http.get(AppConstants.baseServidor + "api/v1/enums/cartypes");
+  }
+
   getBrands() :Observable<any>{
-    return this.http.get(AppConstants.baseServidor + "api/v1/brand");
+    return this.http.get(AppConstants.baseServidor + "api/v1/brand/");
   }
 
   getModelByBrand(brand: string):Observable<any>{
@@ -20,7 +36,7 @@ export class CarService {
   }
 
   getAllModels() : Observable<any>{
-    return this.http.get(AppConstants.baseServidor + "api/v1/model");
+    return this.http.get(AppConstants.baseServidor + "api/v1/model/");
   }
 
   getCars():Observable<any>{
@@ -46,5 +62,7 @@ export class CarService {
   patchCar(id: number, car: []){
     return this.http.patch(AppConstants.baseServidor + "api/v1/car/" + id, car);
   }
+
+
 }
 

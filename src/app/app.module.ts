@@ -15,6 +15,16 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdministradorComponent } from './components/administrador/administrador.component';
+import { MatTableModule } from '@angular/material/table';
+import { CarUpdateComponent } from './components/car-update/car-update.component'  
+import { HttpInterceptorModule } from './service/header-interceptor.service';
+import { CarCreateComponent } from './components/car-create/car-create.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +32,9 @@ import { AdministradorComponent } from './components/administrador/administrador
     HeaderComponent,
     FooterComponent,
     UserLoginComponent,
-    AdministradorComponent
+    AdministradorComponent,
+    CarUpdateComponent,
+    CarCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +47,10 @@ import { AdministradorComponent } from './components/administrador/administrador
     HttpClientModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    HttpInterceptorModule,
+    NgxMaskModule.forRoot(maskConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

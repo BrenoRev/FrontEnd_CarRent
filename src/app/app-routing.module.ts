@@ -5,25 +5,35 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
+import { CarCreateComponent } from './components/car-create/car-create.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
 
 const routes: Routes = [
   {
     path: 'car',
     component: HomeComponent
   },
-    {
+  {
       path: 'admin', canActivate: [GuardiaoGuard],
       component: AdministradorComponent
-    },
+  },
+  {
+    path: 'admin/create', canActivate: [GuardiaoGuard],
+    component: CarCreateComponent
+  },
+  {
+    path: 'admin/update/:id', canActivate: [GuardiaoGuard],
+    component: CarUpdateComponent
+  },
   {
     path: 'login',
     component: UserLoginComponent
   },
-    {
-      path: '',
-      redirectTo: 'login',
-      pathMatch: 'full'
-    }
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

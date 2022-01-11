@@ -20,3 +20,8 @@
   .example-header-image {
     background-size: cover;
   }
+
+  .image{
+    width: 540px;
+    height: 310px;
+  }
