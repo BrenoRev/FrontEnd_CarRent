@@ -1,9 +1,9 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CarService } from 'src/app/service/car.service';
-import { Brand } from '../model/Brand';
-import { Car } from '../model/Car';
-import { Model } from '../model/Model';
+import { Brand } from '../../model/Brand';
+import { Car } from '../../model/Car';
+import { Model } from '../../model/Model';
 
 @Component({
   selector: 'app-car-update',

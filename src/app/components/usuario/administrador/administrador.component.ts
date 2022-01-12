@@ -1,7 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CarService } from 'src/app/service/car.service';
-import { Car } from '../model/Car';
+import { Car } from '../../model/Car';
 
 @Component({
   selector: 'app-administrador',

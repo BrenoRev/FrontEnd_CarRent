@@ -12,13 +12,13 @@ import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { UserLoginComponent } from './components/user-login/user-login.component';
+import { UserLoginComponent } from './components/usuario/user-login/user-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AdministradorComponent } from './components/administrador/administrador.component';
+import { AdministradorComponent } from './components/usuario/administrador/administrador.component';
 import { MatTableModule } from '@angular/material/table';
-import { CarUpdateComponent } from './components/car-update/car-update.component'
+import { CarUpdateComponent } from './components/cars/car-update/car-update.component'
 import { HttpInterceptorModule } from './service/header-interceptor.service';
-import { CarCreateComponent } from './components/car-create/car-create.component';
+import { CarCreateComponent } from './components/cars/car-create/car-create.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatSidenavModule } from '@angular/material/sidenav';

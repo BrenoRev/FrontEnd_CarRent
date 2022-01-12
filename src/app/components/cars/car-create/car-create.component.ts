@@ -1,9 +1,9 @@
 import { Router } from '@angular/router';
-import { CarService } from './../../service/car.service';
+import { CarService } from '../../../service/car.service';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Car } from '../model/Car';
-import { Model } from '../model/Model';
-import { Brand } from '../model/Brand';
+import { Car } from '../../model/Car';
+import { Model } from '../../model/Model';
+import { Brand } from '../../model/Brand';
 
 @Component({
   selector: 'app-car-create',
