@@ -1,20 +1,4 @@
-.padding-left{
-    margin-left: 5px;
-}
-
-.centralizar{
+.padding-top{
     margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-
-@media screen and (min-width: 600px) {
-    .centralizar{
-        margin-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-       
-    } 
+    font-size: 1.2rem; 
 }
