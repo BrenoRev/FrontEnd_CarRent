@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { CarCreateComponent } from './components/car-create/car-create.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: UserLoginComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
   {
     path: '',

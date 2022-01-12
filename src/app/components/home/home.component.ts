@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
     this.service.getCarPageable(pagina - 1).subscribe((data) => {
       this.cars = data.content
       this.total = data.totalElements;
+      window.scrollTo(0, 0);
     })
   }
 

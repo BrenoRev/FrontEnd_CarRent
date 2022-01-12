@@ -16,8 +16,17 @@ div {
 
 a {
     text-decoration: none;
+    color: white;
     font-size: 110%;
     white-space: normal;
+}
+a:hover{
+    color: rgb(226, 219, 219);
+}
+
+.deslogar:hover{
+    color: black;
+    background-color: whitesmoke;
 }
 
 button {
@@ -41,4 +50,10 @@ button {
 .logo {
     width: 10vh;
     height: 10vh;
+}
+
+@media screen and (max-width: 600px) {
+    a{
+        color: black;
+    }
 }

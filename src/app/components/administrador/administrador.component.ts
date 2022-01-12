@@ -24,13 +24,14 @@ export class AdministradorComponent implements OnInit {
     this.service.getCarPageable(pagina - 1).subscribe((data) => {
       this.cars = data.content
       this.total = data.totalElements;
+      window.scrollTo(0, 0);
     })
   }
 
 
   delete(id: number) {
     if (confirm("Deseja realmente excluir o usuário?")) {
-      this.service.deleteCar(id).subscribe((data) => (data));
+      this.service.deleteCar(id).subscribe((data) => window.location.reload());
     }
   }
 }

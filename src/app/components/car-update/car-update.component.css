@@ -1,12 +1,14 @@
-.padding-left {
-    margin-left: 5px;
+.padding-top{
+    margin-top: 20px;
+    font-size: 1rem; 
 }
 
-.centralizar {
-    margin-top: 20px;
-    display: flex;
-    flex-grow: inherit;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.botoes{
+    margin-left: 30px;
+}   
+
+/* Celular */ 
+@media screen and (max-width: 600px) {
+
+
 }

@@ -2,20 +2,20 @@
   <table class="table" mat-table [dataSource]="cars | paginate:{ itemsPerPage:15, currentPage: p, totalItems : total }">
     <!-- Id Column -->
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      <th mat-header-cell *matHeaderCellDef class="font-tamanho">ID</th>
+      <td mat-cell *matCellDef="let row" class="font-tamanho">{{row.id}}</td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Nome</th>
-      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+      <th mat-header-cell *matHeaderCellDef class="font-tamanho">Nome</th>
+      <td mat-cell *matCellDef="let row" class="font-tamanho">{{row.name}}</td>
     </ng-container>
 
     <!-- Price Column -->
     <ng-container matColumnDef="price">
-      <th mat-header-cell *matHeaderCellDef>Preço</th>
-      <td mat-cell *matCellDef="let row">R$ {{row.price}}</td>
+      <th mat-header-cell *matHeaderCellDef class="font-tamanho">Preço</th>
+      <td mat-cell *matCellDef="let row" class="font-tamanho">R${{row.price}}</td>
     </ng-container>
 
     <!-- Action Column -->
@@ -37,9 +37,8 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <div>
-    <pagination-controls (pageChange)="carregarPagina(p = $event)"></pagination-controls>
-  </div>
 </div>
-<button class="btn-outline-dark" style="width: 300px; height: 100px; font-size: 25px;" routerLink="/admin/create">CRIAR
-  ANUNCIO DE VEÍCULO</button>
+<div>
+  <br>
+  <pagination-controls (pageChange)="carregarPagina(p = $event)" class="pagination-css"></pagination-controls>
+</div>

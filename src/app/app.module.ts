@@ -23,6 +23,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AboutComponent } from './components/about/about.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -38,7 +39,7 @@ const maskConfig: Partial<IConfig> = {
     AdministradorComponent,
     CarUpdateComponent,
     CarCreateComponent,
-
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

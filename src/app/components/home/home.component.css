@@ -1,6 +1,7 @@
 .side {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 10px;
   border-radius: 5px;
 }
@@ -8,8 +9,21 @@
 .example-card {
   margin-left: 20px;
   margin-bottom: 20px;
-  ;
+  text-align: left;
+}
+.name-center{
+  text-align: center;
+}
 
+.image{
+  width: 540;
+  height: 310px;
+}
+
+.pagination-css{
+  margin: auto;
+  text-align: center;
+  font-size: 1.3rem;
 }
 
 .example-card:hover {
@@ -18,3 +32,11 @@
   transform: scale(1.02);
   transition: all 0.3s ease-in-out;
 }
+
+@media screen and (max-width: 600px) {
+  .example-card {
+
+    margin-left: 0px;
+  }
+}
+  

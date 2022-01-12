@@ -1,0 +1,23 @@
+.pagination-css{
+    margin: auto;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  @media screen and (min-width: 600px) {
+    .table{
+      margin:auto;
+      width: 900px;
+    }
+    .font-tamanho{
+      text-align: left;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      font-size: 1.2rem;
+    }
+
+}
+
+
+    
+  

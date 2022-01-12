@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CarService } from './../../service/car.service';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Car } from '../model/Car';
@@ -45,7 +46,8 @@ export class CarCreateComponent implements OnInit {
     carFuel: ''
   };
   sendBrand!: string;
-  constructor(private service: CarService) { }
+  constructor(private service: CarService,
+              private router: Router) { }
 
   ngOnInit(): void {
 
@@ -73,7 +75,8 @@ export class CarCreateComponent implements OnInit {
 
   salvarCarro() {
     this.service.saveCar(this.carro).subscribe(data => {
-
+      window.alert("Anuncio criado com sucesso!")
+      this.router.navigateByUrl("/admin")
     });
   }
 
