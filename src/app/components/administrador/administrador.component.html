@@ -1,7 +1,7 @@
 <div class="mat-elevation-z4">
   <table class="table" mat-table [dataSource]="cars | paginate:{ itemsPerPage:15, currentPage: p, totalItems : total }">
     <!-- Id Column -->
-    <ng-container matColumnDef="id">
+    <ng-container matColumnDef="id" id="mobile">
       <th mat-header-cell *matHeaderCellDef class="font-tamanho">ID</th>
       <td mat-cell *matCellDef="let row" class="font-tamanho">{{row.id}}</td>
     </ng-container>
@@ -31,7 +31,7 @@
     <ng-container matColumnDef="delete">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let row">
-        <button (click)="delete(row.id)"><i class="material-icons edit">delete</i></button>
+        <button class="delete" (click)="delete(row.id)"><i class="material-icons edit">delete</i></button>
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

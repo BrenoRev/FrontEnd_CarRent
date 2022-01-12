@@ -24,6 +24,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutComponent } from './components/about/about.component';
+import { LightboxModule } from 'ngx-lightbox';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -58,7 +59,8 @@ const maskConfig: Partial<IConfig> = {
     NgxMaskModule.forRoot(maskConfig),
     NgxPaginationModule,
     MatSidenavModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    LightboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

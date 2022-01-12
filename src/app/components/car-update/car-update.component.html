@@ -90,11 +90,10 @@
         <div class="form-group">
             <label for="brand">Marca</label>
             <span style="color: red;" *ngIf="brandValidate.invalid && brandValidate.touched">*</span>
-            <select name="brand" id="brand" #brandValidate="ngModel" class="form-control" required="true"
+            <select name="brand" id="brand" #brandValidate="ngModel" class="form-control" required="true" (change)="getModels()"
                 [(ngModel)]="carro.brand">
                 <option [ngValue]="brand" *ngFor="let brand of brands">{{brand.name}} </option>
             </select>
-            <button (click)="getModels()">Get Models</button>
         </div>
 
         <div class="form-group">
@@ -102,21 +101,21 @@
             <span style="color: red;" *ngIf="modelValidate.invalid && modelValidate.touched">*</span>
             <select name="model" id="model" #modelValidate="ngModel" class="form-control" required="true"
                 [(ngModel)]="carro.model">
-                <option [ngValue]="model" *ngFor="let model of models">{{model.name}}</option>
+                <option [selected]="model" [ngValue]="model" *ngFor="let model of models">{{model.name}}</option>
             </select>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-12">
-                <label for="ipva">IPVA Gratis?</label>
-                <input [(ngModel)]="carro.ipva" type="checkbox" checked class="form-control" id="ipva"
+                <label id="left" for="ipva">IPVA Gratis?</label>
+                <input  [(ngModel)]="carro.ipva" type="checkbox" checked class="form-control" id="ipva"
                     autocomplete="false" name="ipva">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-12">
-                <label class="text-align:center" for="reserved">Reservado?</label>
+                <label id="left" for="reserved">Reservado?</label>
                 <input [(ngModel)]="carro.reserved" type="checkbox" checked class="form-control" id="reserved" autocomplete="false" name="reserved">
             </div>
         </div>

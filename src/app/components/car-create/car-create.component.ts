@@ -81,7 +81,6 @@ export class CarCreateComponent implements OnInit {
   }
 
   getModels() {
-    console.log("fez")
     this.service.getModelByBrand(this.carro.brand.name!).subscribe(data => {
 
       this.models = data;

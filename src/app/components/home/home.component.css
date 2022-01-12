@@ -10,6 +10,8 @@
   margin-left: 20px;
   margin-bottom: 20px;
   text-align: left;
+  width: 480px;
+  height: max-content;
 }
 .name-center{
   text-align: center;

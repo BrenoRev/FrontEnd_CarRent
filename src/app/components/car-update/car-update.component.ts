@@ -20,7 +20,7 @@ export class CarUpdateComponent implements OnInit {
 
   brand: Brand = {
     id: 0,
-
+    name: ''
   }
 
   color!: string
@@ -46,7 +46,7 @@ export class CarUpdateComponent implements OnInit {
     carColor: '',
     carFuel: ''
   };
-  sendBrand!: string;
+
   constructor(private service: CarService,
     private routeActive: ActivatedRoute,
     private router: Router) { }
@@ -55,6 +55,10 @@ export class CarUpdateComponent implements OnInit {
 
     this.service.getCarById(parseInt(this.routeActive.snapshot.paramMap.get('id')!)).subscribe(data => {
       this.carro = data;
+      this.brand = data.brand;
+      this.service.getModelByBrand(data.brand.name).subscribe(data => {
+        this.models = data;
+      });
     });
 
     this.service.getBrands().subscribe(data => {
