@@ -1,0 +1,31 @@
+.general{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 1.2rem; 
+    margin-top: 50px;
+}
+
+button{
+    size: 10px;
+}
+table{
+    margin:auto;
+}
+
+@media screen and (min-width: 960px) {
+    .table{
+        margin:auto;
+        width: 900px;
+    }
+    
+    .font-tamanho{
+        text-align: left;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        font-size: 1.2rem;
+    }
+    
+}
+    

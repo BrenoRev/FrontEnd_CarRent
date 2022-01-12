@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppConstants } from '../AppConstants';
 import { Observable } from 'rxjs';
+import { Brand } from '../components/model/Brand';
+import { Model } from '../components/model/Model';
 
 @Injectable({
   providedIn: 'root'
@@ -67,6 +69,13 @@ export class CarService {
     return this.http.patch(AppConstants.baseServidor + "api/v1/car/" + id, car);
   }
 
+  saveBrand(brand: Brand) {
+    return this.http.post(AppConstants.baseServidor + "api/v1/brand/", brand);
+  }
+
+  saveModel(models: Array<Model>, brand: string) {
+    return this.http.post(AppConstants.baseServidor + "api/v1/model/"+ brand , models);
+  }
 
 }
 

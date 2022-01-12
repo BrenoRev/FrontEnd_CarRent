@@ -1,0 +1,15 @@
+.addicional{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 1.2rem; 
+    margin-top: 50px;
+    text-align: center;
+}
+
+#left{
+    margin-left: 20px;
+}
+

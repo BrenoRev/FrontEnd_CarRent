@@ -1,1 +1,34 @@
-<p>model-create works!</p>
+<div class="general">
+<form class="addicional" #formValidate="ngForm" fxLayout="row" >
+  
+   <div class="card text-center">
+       <div class="card-header">
+           Modelos da Marca
+       </div>
+       <div class="card-body">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <input type="text" class="form-control" [(ngModel)]="nameModel" name="nameModel">
+            </div>
+            <div class="form-group col-md-2">
+                <button class="btn btn-primary" (click)="addModel()"> Adicionar </button>
+            </div>
+             <div class="form-group col-md-12">
+                <button class="btn btn-primary btn-sm" (click)="salvarModelo()" [disabled]="formValidate.invalid">Finalizar</button>
+                <button [routerLink]="['/admin']" class="btn btn-warning btn-sm" style="margin-left:10px"> Voltar</button>
+                </div>
+        </div>   
+       </div>
+   </div>
+
+  <table class="table">
+    <tbody>
+        <tr *ngFor="let model of modelos">
+            <td>{{model.name!}}</td>
+            <td><button class="btn btn-danger" (click)="deletarModelo(model.name!)"> Remover</button></td>
+        </tr>
+    </tbody>
+  </table>
+</form>
+
+</div>

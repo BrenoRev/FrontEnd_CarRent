@@ -25,6 +25,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutComponent } from './components/about/about.component';
 import { LightboxModule } from 'ngx-lightbox';
+import { BrandCreateComponent } from './components/cars/brand-create/brand-create.component';
+import { ModelCreateComponent } from './components/cars/model-create/model-create.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -41,6 +43,8 @@ const maskConfig: Partial<IConfig> = {
     CarUpdateComponent,
     CarCreateComponent,
     AboutComponent,
+    BrandCreateComponent,
+    ModelCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +65,7 @@ const maskConfig: Partial<IConfig> = {
     MatSidenavModule,
     FlexLayoutModule,
     LightboxModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
