@@ -81,6 +81,7 @@ export class CarCreateComponent implements OnInit {
         this.router.navigateByUrl('/admin');
       }, 1500);
     });
+    this.novo()
   }
 
   getModels() {

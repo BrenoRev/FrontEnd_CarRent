@@ -99,6 +99,13 @@ export class CarUpdateComponent implements OnInit {
     });
   }
 
+  validarAno(ano: number): void{
+    console.log(ano)
+    if (ano > 2022 || ano <= 1800) {
+      return this.carro.ageCar = undefined;
+    }
+  }
+
   getModels() {
     this.service.getModelByBrand(this.carro.brand.name!).subscribe(data => {
       this.models = data;

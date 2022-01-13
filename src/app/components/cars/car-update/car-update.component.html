@@ -4,7 +4,7 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="name">Nome</label>
-                <span style="color: red;" *ngIf="nomeValidate.invalid && nomeValidate.touched">*</span>
+                <span style="color: red;" *ngIf="nomeValidate.invalid && nomeValidate.touched && nomeValidate">*</span>
                 <input [(ngModel)]="carro.name" #nomeValidate="ngModel" type="text" class="form-control" id="name"
                     autocomplete="false" required="true" name="name">
             </div>
@@ -15,7 +15,7 @@
                 <label for="ageCar">Ano</label>
                 <span style="color: red;" *ngIf="anoValidate.invalid && anoValidate.touched">*</span>
                 <input [(ngModel)]="carro.ageCar" #anoValidate="ngModel" type="number" class="form-control" id="ageCar"
-                    autocomplete="false" required="true" name="ageCar">
+                    autocomplete="false" required="true" name="ageCar" mask="0000.00">
             </div>
         </div>
 
@@ -131,3 +131,9 @@
             <button [routerLink]="['/admin']" class="btn btn-warning botoes" style="margin-left:20px"> Voltar</button>
         </div>
     </div>
+
+    <mat-toolbar class="footer">
+        <span class="purple v-middle">
+            Desenvolvido por <i class="material-icons purple v-middle"> copyright</i> <strong>Breno DevRev</strong>
+        </span>
+      </mat-toolbar>

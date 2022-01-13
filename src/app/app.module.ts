@@ -5,8 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './template/header/header.component';
-import { FooterComponent } from './template/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
@@ -23,7 +22,6 @@ import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AboutComponent } from './components/about/about.component';
 import { LightboxModule } from 'ngx-lightbox';
 import { BrandCreateComponent } from './components/cars/brand-create/brand-create.component';
 import { ModelCreateComponent } from './components/cars/model-create/model-create.component';
@@ -39,12 +37,10 @@ const maskConfig: Partial<IConfig> = {
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent,
     UserLoginComponent,
     AdministradorComponent,
     CarUpdateComponent,
     CarCreateComponent,
-    AboutComponent,
     BrandCreateComponent,
     ModelCreateComponent
   ],

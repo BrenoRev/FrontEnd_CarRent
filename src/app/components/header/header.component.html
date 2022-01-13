@@ -12,10 +12,9 @@
         </a>
         <span class="example-spacer"></span>
         <div fxShow="true" fxHide.lt-md="true">
-            <a mat-button routerLink="/admin/create" style=" border: 2px dashed rgb(8, 8, 8)" *ngIf="online()">Criar Anuncio</a>
+            <a mat-button routerLink="/admin/create" style=" border: 2px dashed rgb(8, 8, 8); margin-right: 10px;" *ngIf="online()">Criar Anuncio</a>
             <a mat-button routerLink="/admin/brand" style=" border: 2px dashed rgb(8, 8, 8)" *ngIf="online()">Criar Marca e Modelo</a>
             <a mat-button routerLink="/car">Comprar Carro</a>
-            <a mat-button routerLink="/about">Sobre nós</a>
             <a mat-button routerLink="/login" *ngIf="!online()">
                 <mat-icon>person</mat-icon>Minha Conta
             </a>
@@ -32,7 +31,6 @@
             <a mat-button routerLink="/admin/create" style=" border: 1px dashed rgb(8, 8, 8)" *ngIf="online()">Criar Anuncio</a>
             <a mat-button routerLink="/admin/brand" style=" border: 1px dashed rgb(8, 8, 8)" *ngIf="online()">Criar Marca e Modelo</a>
             <a mat-button routerLink="/car">Comprar Carro</a>
-            <a mat-button routerLink="/about">Sobre nós</a>
             <a mat-button routerLink="/login" *ngIf="!online()"><mat-icon>person</mat-icon>Minha Conta</a>
             <a mat-button routerLink="/admin" *ngIf="online()">
                 <mat-icon>person</mat-icon>Área de Administração <button class="alert-danger"

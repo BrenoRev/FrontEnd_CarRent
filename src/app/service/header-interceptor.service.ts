@@ -63,11 +63,11 @@ export class HeaderInterceptorService implements HttpInterceptor {
       icon: 'error',
       title: 'Oops...',
       text: errorMessage,
-      timer: 1500
+      timer: 5000
     });
     setTimeout(() => {
       window.location.reload();
-    }, 1500);
+    }, 5000);
     
     
     return throwError(errorMessage);

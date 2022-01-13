@@ -7,7 +7,6 @@ import { HomeComponent } from './components/home/home.component';
 import { UserLoginComponent } from './components/usuario/user-login/user-login.component';
 import { CarCreateComponent } from './components/cars/car-create/car-create.component';
 import { CarUpdateComponent } from './components/cars/car-update/car-update.component';
-import { AboutComponent } from './components/about/about.component';
 import { BrandCreateComponent } from './components/cars/brand-create/brand-create.component';
 import { ModelCreateComponent } from './components/cars/model-create/model-create.component';
 
@@ -40,11 +39,6 @@ const routes: Routes = [
     path: 'login',
     component: UserLoginComponent
   },
-  {
-    path: 'about',
-    component: AboutComponent
-  },
-  
   {
     path: '',
     redirectTo: 'car',
