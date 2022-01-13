@@ -12,16 +12,6 @@ import { Brand } from '../../model/Brand';
 })
 export class CarCreateComponent implements OnInit {
 
-  model: Model = {
-    name: '',
-    id: 0
-  };
-
-  brand: Brand = {
-    id: 0,
-
-  }
-
   color!: string
   brands: Array<Brand> = [];
   models: Array<Model> = [];
@@ -31,12 +21,16 @@ export class CarCreateComponent implements OnInit {
   carFuels: Array<String> = []
 
   carro: Car = {
-    model: this.model,
-    brand: this.brand,
+    model: {
+      id: 0
+    },
+    brand: {
+      id: 0,
+    },
     name: '',
-    ageCar: 0,
-    km: 0,
-    price: 0,
+    ageCar: undefined,
+    km: undefined,
+    price: undefined,
     ipva: false,
     reserved: false,
     photo: '',

@@ -1,12 +1,13 @@
 import { Brand } from './Brand';
 import { Model } from './Model';
 export interface Car{
+    id?: number;
     model : Model;
     brand: Brand;
     name: string;
-    ageCar: number;
-    km: number;
-    price: number;
+    ageCar: number | undefined;
+    km: number | undefined;
+    price: number | undefined;
     ipva: boolean;
     reserved: boolean;
     photo: string;

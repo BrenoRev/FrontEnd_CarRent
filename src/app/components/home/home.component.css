@@ -18,7 +18,7 @@
 }
 
 .image{
-  width: 540;
+  width: 480px;
   height: 310px;
 }
 
@@ -35,10 +35,27 @@
   transition: all 0.3s ease-in-out;
 }
 
+#container {
+  display: inline-block;
+  position: relative;
+}
+
+#container p {
+  position: absolute;
+  top: 145px;
+  right: 130px;
+  font-size: 20px;
+  color: black;
+}
+
 @media screen and (max-width: 600px) {
   .example-card {
-
     margin-left: 0px;
+  }
+  .image{
+    margin: auto;
+    margin-bottom: 10px;
+    width: 100%;
   }
 }
   

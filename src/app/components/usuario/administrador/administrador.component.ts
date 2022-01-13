@@ -21,7 +21,8 @@ export class AdministradorComponent implements OnInit {
   }
 
   carregarPagina(pagina: number) {
-    this.service.getCarPageable(pagina - 1).subscribe((data) => {
+    this.service.getCarPageable(pagina - 1,"id").subscribe((data) => {
+      console.log(data);
       this.cars = data.content
       this.total = data.totalElements;
       window.scrollTo(0, 0);

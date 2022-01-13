@@ -1,7 +1,11 @@
 <div class="side">
   <mat-card class="example-card"
     *ngFor="let carro of cars  | paginate:{ itemsPerPage:15, currentPage: p, totalItems : total }" (click)="open(carro.photo, carro.name)">
-    <img mat-card-image src="{{carro.photo}}" alt="Car" class="image">
+    <div id="container">
+      <img mat-card-image src="{{carro.photo}}" alt="Car" class="image">
+      <p *ngIf="carro.reserved" style="font-weight: 600; float:right; border: 2px dashed rgb(233, 8, 8); padding: 10px; background-color: white;">CARRO RESERVADO</p>
+    </div>
+
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title class="name-center">{{carro.name}}</mat-card-title>
