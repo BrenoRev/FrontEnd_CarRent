@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CarService } from 'src/app/service/car.service';
+import Swal from 'sweetalert2';
 import { Brand } from '../../model/Brand';
 
 @Component({
@@ -14,16 +15,22 @@ export class BrandCreateComponent implements OnInit {
     id: 0,
     name: ''
   }
-
+  allBrands: Array<Brand> = [];
   constructor(private service: CarService,
-              private router: Router) { }
+    private router: Router) { }
 
   ngOnInit(): void {
-  }
-
-  salvarMarca(){
-    this.service.saveBrand(this.brand).subscribe(data => {
-      this.router.navigate(['admin/model/' + this.brand.name]);
+    this.service.getBrands().subscribe(data => {
+      this.allBrands = data;
     });
   }
+
+  salvarMarca() {
+  
+      this.service.saveBrand(this.brand).subscribe(data => {
+        this.router.navigate(['admin/model/' + this.brand.name]);
+    
+  
+      });
+    }
 }

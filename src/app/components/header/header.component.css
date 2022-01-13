@@ -49,7 +49,7 @@ button {
 
 .logo {
     width: 10vh;
-    height: 10vh;
+    height: 8vh;
 }
 
 @media screen and (max-width: 960px) {

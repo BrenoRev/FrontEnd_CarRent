@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { CarService } from 'src/app/service/car.service';
+import Swal from 'sweetalert2';
 import { Model } from '../../model/Model';
 
 @Component({
@@ -15,6 +16,7 @@ export class ModelCreateComponent implements OnInit {
   nameModel!: string;
   modalRef?: BsModalRef;
   modelDelete!: string;
+  allModels: Array<Model> = [];
 
     constructor(private service: CarService,
                 private router: Router,
@@ -27,14 +29,26 @@ openModal(template: TemplateRef<any>, model: string) {
 }          
 
   ngOnInit(): void {
+    this.service.getAllModels().subscribe(data => {
+      this.allModels = data;
+    });
   }
 
   addModel(){
 
-    if(this.modelos.findIndex(x => x.name === this.nameModel) === -1){
+    if(this.modelos.findIndex(x => x.name === this.nameModel) === -1 && this.allModels.findIndex(x => x.name === this.nameModel) === -1){
       this.modelos.push({
         name: this.nameModel
       })
+    }else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Já existe um modelo com esse nome!",
+      });
+      setTimeout(() => {
+        this.nameModel = '';
+      }, 500);
     }
   }
   

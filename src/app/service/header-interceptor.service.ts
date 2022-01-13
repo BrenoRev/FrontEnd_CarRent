@@ -42,22 +42,13 @@ export class HeaderInterceptorService implements HttpInterceptor {
   }
 
   processaError(error: HttpErrorResponse) {
-    let errorMessage = 'Erro Desconhecido';
+    let errorMessage = error.error.message;
   
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = `Erro: ${error.error.message}`;
-    }
-    if (error.error) {
-      errorMessage = `Erro: ${error.error.message}`;
-    }
-    if(error.status == 409){
-      errorMessage = "Já existe um dado com esse valor."
-    }
-    else if (error.status === 403) {
+    if (error.status === 403) {
       errorMessage = "Acesso expirado, faça o login novamente."
       localStorage.clear();
     } else {
-      errorMessage = `Código: ${error.error.code == undefined ? '000' : error.error.code} , Mensagem: ${error.error.message == undefined ? "Erro Desconhecido" : error.error.message}`;
+      errorMessage = `Mensagem: ${error == undefined ? "Erro Desconhecido" : error.error.error}`;
     }
     Swal.fire({
       icon: 'error',
