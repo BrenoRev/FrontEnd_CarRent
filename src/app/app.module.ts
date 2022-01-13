@@ -27,6 +27,8 @@ import { AboutComponent } from './components/about/about.component';
 import { LightboxModule } from 'ngx-lightbox';
 import { BrandCreateComponent } from './components/cars/brand-create/brand-create.component';
 import { ModelCreateComponent } from './components/cars/model-create/model-create.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import Swal from 'sweetalert2';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -65,7 +67,7 @@ const maskConfig: Partial<IConfig> = {
     MatSidenavModule,
     FlexLayoutModule,
     LightboxModule,
-
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

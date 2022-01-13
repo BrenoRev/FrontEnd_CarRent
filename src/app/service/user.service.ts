@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppConstants } from '../AppConstants';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,11 @@ export class UserService {
 
       this.router.navigate(['/admin'])
     }, error => {
-      alert("Acesso negado, credenciais não foram aceitas")
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Credenciais não foram aceitas"
+      });
     })
   }
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { CarService } from 'src/app/service/car.service';
 import { Model } from '../../model/Model';
 
@@ -12,26 +13,36 @@ export class ModelCreateComponent implements OnInit {
 
   modelos: Array<Model> = [];
   nameModel!: string;
+  modalRef?: BsModalRef;
+  modelDelete!: string;
 
     constructor(private service: CarService,
                 private router: Router,
-                private routeActive: ActivatedRoute) { }
+                private routeActive: ActivatedRoute,
+                private modalService: BsModalService) { }
+
+openModal(template: TemplateRef<any>, model: string) {
+  this.modelDelete = model;
+  this.modalRef = this.modalService.show(template);
+}          
 
   ngOnInit(): void {
   }
 
   addModel(){
-    this.modelos.push({
-      name: this.nameModel
-    })
-    console.log(this.modelos);
-  }
-  deletarModelo(name: string){
-    if(confirm("Deseja deletar o modelo " + name + "?")){
-      const index = this.modelos.findIndex(x => x.name === name);
-      this.modelos.splice(index, 1);
-      console.log("telefone removido" + name + " index " + index);
+
+    if(this.modelos.findIndex(x => x.name === this.nameModel) === -1){
+      this.modelos.push({
+        name: this.nameModel
+      })
     }
+  }
+  
+  deletarModelo(){
+      const index = this.modelos.findIndex(x => x.name === this.modelDelete);
+      this.modelos.splice(index, 1);
+      this.modalService.hide(1);
+      this.modalService._hideModal();
   }
 
   salvarModelo(){

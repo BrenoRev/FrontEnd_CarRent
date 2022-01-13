@@ -3,6 +3,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Injectable, NgModule } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class HeaderInterceptorService implements HttpInterceptor {
     if (localStorage.getItem('token') !== null) {
       const token = 'Bearer ' + localStorage.getItem('token');
 
-      if (req.method == 'GET') {
+      if (req.method == 'GET' || req.url.includes('/login')) {
         return next.handle(req);
       }
 
@@ -30,8 +31,8 @@ export class HeaderInterceptorService implements HttpInterceptor {
       // Se existir manda a autorização com a token
       return next.handle(tokenRequest).pipe(
         tap((event: HttpEvent<any>) => {
-          if (event instanceof HttpResponse && (event.status === 200 || event.status === 201)) {
-            //alert('Sucesso: ' + event.status);
+          if (event instanceof HttpResponse) {
+            // console.log('event--->>>', event);
           }
         }), catchError(this.processaError))
     } else {
@@ -42,16 +43,33 @@ export class HeaderInterceptorService implements HttpInterceptor {
 
   processaError(error: HttpErrorResponse) {
     let errorMessage = 'Erro Desconhecido';
-
+  
     if (error.error instanceof ErrorEvent) {
       errorMessage = `Erro: ${error.error.message}`;
     }
+    if (error.error) {
+      errorMessage = `Erro: ${error.error.message}`;
+    }
+    if(error.status == 409){
+      errorMessage = "Já existe um dado com esse valor."
+    }
     else if (error.status === 403) {
       errorMessage = "Acesso expirado, faça o login novamente."
+      localStorage.clear();
     } else {
       errorMessage = `Código: ${error.error.code == undefined ? '000' : error.error.code} , Mensagem: ${error.error.message == undefined ? "Erro Desconhecido" : error.error.message}`;
     }
-    window.alert(errorMessage);
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: errorMessage,
+      timer: 1500
+    });
+    setTimeout(() => {
+      window.location.reload();
+    }, 1500);
+    
+    
     return throwError(errorMessage);
   }
 

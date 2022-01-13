@@ -4,6 +4,7 @@ import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Car } from '../../model/Car';
 import { Model } from '../../model/Model';
 import { Brand } from '../../model/Brand';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-car-create',
@@ -69,8 +70,16 @@ export class CarCreateComponent implements OnInit {
 
   salvarCarro() {
     this.service.saveCar(this.carro).subscribe(data => {
-      window.alert("Anuncio criado com sucesso!")
-      this.router.navigateByUrl("/admin")
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Carro adicionado ao catálogo com sucesso!',
+        showConfirmButton: false,
+        timer: 1500
+      });
+      setTimeout(() => {
+        this.router.navigateByUrl('/admin');
+      }, 1500);
     });
   }
 

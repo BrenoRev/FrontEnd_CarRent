@@ -4,6 +4,7 @@ import { CarService } from 'src/app/service/car.service';
 import { Brand } from '../../model/Brand';
 import { Car } from '../../model/Car';
 import { Model } from '../../model/Model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-car-update',
@@ -85,8 +86,16 @@ export class CarUpdateComponent implements OnInit {
 
   updateCar() {
     this.service.updateCar(parseInt(this.routeActive.snapshot.paramMap.get('id')!), this.carro).subscribe(data => {
-      window.alert("Carro atualizado com sucesso!")
-      this.router.navigateByUrl("/admin")
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Carro atualizado com sucesso!',
+        showConfirmButton: false,
+        timer: 1500
+      });
+      setTimeout(() => {
+        this.router.navigateByUrl('/admin');
+      }, 1500);
     });
   }
 
