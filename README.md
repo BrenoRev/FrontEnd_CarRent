@@ -1,27 +1,62 @@
-# CarRent
+# Catálogo de Carros
+ <p>Ferramentas utilizadas</p>
+        <ul>
+  <li>Angular</li>
+  <li>Rxjs</li>
+  <li>Angular Material</li>
+  <li>Bootstrap</li>
+  <li>Lightbox</li>
+  <li>SwalAlerts</li>
+        </ul>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
+## Development Setup
 
-## Development server
+### Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Install [Node.js] which includes
 
-## Code scaffolding
+### Setting Up a Project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Install the Angular CLI globally:
 
-## Build
+```
+npm install -g @angular/cli
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Download or clone the code from this repository.
 
-## Running unit tests
+If you download as a zip file, be sure to unzip it.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+git clone https://github.com/BrenoRev/FrontEnd_CarRent.git
+```
 
-## Running end-to-end tests
+Navigate to the Application folder
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+cd [PROJECT NAME]
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+In a command window (or the Command prompt in VS Code), type npm install.
+
+```
+npm install
+
+```
+
+This creates a node_modules folder and installs all packages from the package.json file into that folder. You may see a few warnings during this process, but you should not see any errors.
+
+In the same command window (or the Command property in VS Code), type npm start.
+
+```
+npm start
+
+```
+The application should then compile and launch in your default browser.
+
+<br>
+<details>
+    <br>
+    <summary><b>IMAGENS DO PROJETO, CLIQUE AQUI PARA VER </b></summary>
+  </details>
