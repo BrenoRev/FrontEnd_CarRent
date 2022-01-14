@@ -87,12 +87,13 @@
             </select>
         </div>
 
+        
         <div class="form-group">
             <label for="brand">Marca</label>
             <span style="color: red;" *ngIf="brandValidate.invalid && brandValidate.touched">*</span>
             <select name="brand" id="brand" #brandValidate="ngModel" class="form-control" required="true" (change)="getModels()"
                 [(ngModel)]="carro.brand">
-                <option [ngValue]="carro.brand" *ngFor="let brand of brands">{{brand.name}} </option>
+                <option [ngValue]="brand" *ngFor="let brand of brands">{{brand.name}} </option>
             </select>
         </div>
 
@@ -101,7 +102,7 @@
             <span style="color: red;" *ngIf="modelValidate.invalid && modelValidate.touched">*</span>
             <select name="model" id="model" #modelValidate="ngModel" class="form-control" required="true"
                 [(ngModel)]="carro.model">
-                <option [ngValue]="carro.model" *ngFor="let model of models">{{model.name}}</option>
+                <option [ngValue]="model" *ngFor="let model of models">{{model.name}}</option>
             </select>
         </div>
 

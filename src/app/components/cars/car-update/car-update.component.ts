@@ -13,17 +13,6 @@ import Swal from 'sweetalert2';
 })
 export class CarUpdateComponent implements OnInit {
 
-
-  model: Model = {
-    name: '',
-    id: 0
-  };
-
-  brand: Brand = {
-    id: 0,
-    name: ''
-  }
-
   color!: string
   brands: Array<Brand> = [];
   models: Array<Model> = [];
@@ -33,8 +22,12 @@ export class CarUpdateComponent implements OnInit {
   carFuels: Array<String> = []
 
   carro: Car = {
-    model: this.model,
-    brand: this.brand,
+    model: {
+      id: 0
+    },
+    brand: {
+      id: 0,
+    },
     name: '',
     ageCar: undefined,
     km: undefined,
@@ -54,11 +47,12 @@ export class CarUpdateComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.service.getCarById(parseInt(this.routeActive.snapshot.paramMap.get('id')!)).subscribe(data => {
+      this.service.getCarById(parseInt(this.routeActive.snapshot.paramMap.get('id')!)).subscribe(data => {
       this.carro = data;
-      this.brand = data.brand;
-      this.service.getModelByBrand(data.brand.name).subscribe(data => {
-        this.models = data;
+      this.carro.brand = data.brand;
+      this.service.getModelByBrand(this.carro.brand.name!).subscribe(data => {
+      this.models = data;
+        console.log(this.carro.model);
       });
     });
 
@@ -99,15 +93,10 @@ export class CarUpdateComponent implements OnInit {
     });
   }
 
-  validarAno(ano: number): void{
-    console.log(ano)
-    if (ano > 2022 || ano <= 1800) {
-      return this.carro.ageCar = undefined;
-    }
-  }
 
   getModels() {
     this.service.getModelByBrand(this.carro.brand.name!).subscribe(data => {
+
       this.models = data;
     });
   }

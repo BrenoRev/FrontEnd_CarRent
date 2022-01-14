@@ -26,6 +26,7 @@ import { LightboxModule } from 'ngx-lightbox';
 import { BrandCreateComponent } from './components/cars/brand-create/brand-create.component';
 import { ModelCreateComponent } from './components/cars/model-create/model-create.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { MatSelectModule } from '@angular/material/select';
 import Swal from 'sweetalert2';
 
 const maskConfig: Partial<IConfig> = {
@@ -64,6 +65,7 @@ const maskConfig: Partial<IConfig> = {
     FlexLayoutModule,
     LightboxModule,
     ModalModule.forRoot(),
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

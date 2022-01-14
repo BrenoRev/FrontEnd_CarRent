@@ -49,8 +49,13 @@ export class CarService {
     return this.http.get(AppConstants.baseServidor + "api/v1/car/");
   }
 
-  getCarPageable(page: number, sort?: string): Observable<any> {
-    var sorteable = sort != null? "&sort="+sort+",asc" : "&sort=price,desc";
+  getCarPageable(page: number, sort?: string, ordem?: string): Observable<any> {
+
+    if(ordem == null){
+      ordem = "asc";
+    }
+    
+    var sorteable = sort != null? "&sort="+sort+","+ordem : "&sort=price,desc";
     return this.http.get(AppConstants.baseServidor + "api/v1/car/pagination/?page=" + page + "&size=15" + sorteable);
   }
 

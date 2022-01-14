@@ -11,6 +11,50 @@ import { Lightbox } from 'ngx-lightbox';
 })
 export class HomeComponent implements OnInit {
 
+  options: string[] = ['Menor Preço', 'Maior Preço', 'Mais Novos', 'Mais Antigos', ' Menor km', 'Maior km'];
+  opcao = this.options[1];
+  sortOrdem!: string;
+  ordenar!: string;
+
+  verifyOrdenacao(i: number){
+
+  switch (i) {
+    case 0:
+      this.sortOrdem = 'price';
+      this.ordenar = 'asc';
+      this.carregarPagina(1);
+      break;
+    case 1:
+      this.sortOrdem = 'price';
+      this.ordenar = 'desc';
+      this.carregarPagina(1);
+      break;
+    case 2:
+      this.sortOrdem = 'ageCar';
+      this.ordenar = 'desc';
+      this.carregarPagina(1);
+      break;
+    case 3:
+      this.sortOrdem = 'ageCar';
+      this.ordenar = 'asc';
+      this.carregarPagina(1);
+      break;
+    case 4:
+      this.sortOrdem = 'km';
+      this.ordenar = 'asc';
+      this.carregarPagina(1);
+      break;
+    case 5:
+      this.sortOrdem = 'km';
+      this.ordenar = 'desc';
+      this.carregarPagina(1);
+      break;
+
+    default:
+      break;
+
+  }
+  }
   _albums: Array<any> = []; 
 
   cars!: Array<Car>;
@@ -26,7 +70,8 @@ export class HomeComponent implements OnInit {
   }
 
   carregarPagina(pagina: number) {
-    this.service.getCarPageable(pagina - 1).subscribe((data) => {
+    console.log("foi")
+    this.service.getCarPageable(pagina - 1, this.sortOrdem, this.ordenar).subscribe((data) => {
       this.cars = data.content
       this.total = data.totalElements;
       window.scrollTo(0, 0);
