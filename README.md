@@ -1,5 +1,7 @@
 # Catálogo de Carros
- <p>Ferramentas utilizadas</p>
+<h4>BACK-END : https://github.com/BrenoRev/BackEnd_CarRent</h4>
+<hr>
+ <p>Tools</p>
         <ul>
   <li>Angular</li>
   <li>Rxjs</li>
@@ -9,11 +11,16 @@
   <li>SwalAlerts</li>
         </ul>
 
+<hr>
+<h5> Make login using:
+<h5> USER = admin <br> PASSWORD = admin
+<hr>
+  
 ## Development Setup
 
 ### Prerequisites
 
-- Install [Node.js] which includes
+- Install [Node.js]
 
 ### Setting Up a Project
 
@@ -58,5 +65,5 @@ The application should then compile and launch in your default browser.
 <br>
 <details>
     <br>
-    <summary><b>IMAGENS DO PROJETO, CLIQUE AQUI PARA VER </b></summary>
+    <summary><b>PROJECT'S IMAGES</b></summary>
   </details>
