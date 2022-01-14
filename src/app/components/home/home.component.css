@@ -49,10 +49,26 @@
 }
 
 .footer {
-  /* */
   display: block;
   box-shadow: 0px -3px 3px rgba(70, 190, 194, 0.438);
   height: 64px;
+}
+
+#ipva{
+  font-weight: 600; 
+    color:white;
+   float:right;
+    border: 2px solid rgb(126, 141, 228); 
+    padding: 10px; 
+    background-color: rgb(46, 35, 211);
+}
+
+#reservado{
+  font-weight: 600; 
+  float:right; 
+  border: 2px solid rgb(126, 141, 228); 
+  padding: 10px; 
+  background-color: rgb(255, 255, 255);
 }
 
 .footer span {

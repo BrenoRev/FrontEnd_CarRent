@@ -3,7 +3,7 @@
     *ngFor="let carro of cars  | paginate:{ itemsPerPage:15, currentPage: p, totalItems : total }" (click)="open(carro.photo, carro.name)">
     <div id="container">
       <img mat-card-image src="{{carro.photo}}" alt="Car" class="image">
-      <p *ngIf="carro.reserved" style="font-weight: 600; float:right; border: 2px dashed rgb(233, 8, 8); padding: 10px; background-color: white;">CARRO RESERVADO</p>
+      <p *ngIf="carro.reserved" id="reservado">CARRO RESERVADO</p>
     </div>
 
     <mat-card-header>
@@ -21,7 +21,7 @@
       <h4>Combustível : {{carro.carFuel}}</h4>
     </mat-card-content>
     <mat-card-actions>
-      <p *ngIf="carro.ipva" style="font-weight: 600; float:right; border: 2px dashed rgb(103, 223, 223); padding: 10px">IPVA PAGO</p>
+      <p *ngIf="carro.ipva" id="ipva">IPVA PAGO</p>
     </mat-card-actions>
   </mat-card>
 </div>

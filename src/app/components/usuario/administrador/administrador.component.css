@@ -8,6 +8,11 @@
     background-color: aqua;
   }
   
+  .table{
+    margin:auto;
+    width: 900px;
+  }
+  
   .mobile{
     display: none;
   }

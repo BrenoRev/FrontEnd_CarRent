@@ -61,7 +61,16 @@ openModal(template: TemplateRef<any>, model: string) {
 
   salvarModelo(){
     this.service.saveModel(this.modelos, this.routeActive.snapshot.paramMap.get('brand')!).subscribe(data => {
-      this.router.navigate(['admin/']);
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Marca e modelos adicionados com sucesso',
+        showConfirmButton: true,
+        timer: 3000
+      });
+      setTimeout(() => {
+        this.router.navigateByUrl('/admin');
+      }, 3000);
     });
   }
 }

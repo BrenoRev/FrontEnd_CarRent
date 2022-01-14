@@ -21,7 +21,7 @@
             <a mat-button routerLink="/admin" *ngIf="online()">
                 <mat-icon>person</mat-icon>Area de Administração
             </a>
-            <button class="alert-danger deslogar" style="margin-left: 10px;" (click)="deslogar()" *ngIf="online()">Deslogar</button>
+            <button class="btn btn-default deslogar" style="margin-left: 10px;" (click)="deslogar()" *ngIf="online()">Deslogar</button>
         </div>
 
     </mat-toolbar>
@@ -33,7 +33,7 @@
             <a mat-button routerLink="/car">Comprar Carro</a>
             <a mat-button routerLink="/login" *ngIf="!online()"><mat-icon>person</mat-icon>Minha Conta</a>
             <a mat-button routerLink="/admin" *ngIf="online()">
-                <mat-icon>person</mat-icon>Área de Administração <button class="alert-danger"
+                <mat-icon>person</mat-icon>Área de Administração <button class="btn-default"
                     style="margin: 10px; border-radius: 20px;" (click)="deslogar()">Deslogar</button>
             </a>
         </div>
