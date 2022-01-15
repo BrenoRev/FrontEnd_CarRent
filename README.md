@@ -67,4 +67,17 @@ The application should then compile and launch in your default browser.
 <details>
     <br>
     <summary><b>PROJECT'S IMAGES</b></summary>
+  
+  ![image](https://user-images.githubusercontent.com/84048306/149637155-dde4bcc0-87c2-4928-97ff-f45f19d32a4d.png)
+![image](https://user-images.githubusercontent.com/84048306/149637162-b9f5680a-ec7c-4cde-a2f9-88d6ebf2762f.png)
+![image](https://user-images.githubusercontent.com/84048306/149637166-d68a13d8-964a-41f7-96de-c03da390e104.png)
+![image](https://user-images.githubusercontent.com/84048306/149637169-8c43729f-9572-4968-932e-e15c513ae802.png)
+![image](https://user-images.githubusercontent.com/84048306/149637173-7e97e100-c679-4de7-bfb5-bdf2f73348ab.png)
+  ![image](https://user-images.githubusercontent.com/84048306/149637185-f263a625-31c2-44e6-80fe-1716ab44f17c.png)
+  ![image](https://user-images.githubusercontent.com/84048306/149637189-4b151ea6-1e2d-4f28-a448-fd78c7d405aa.png)
+  ![image](https://user-images.githubusercontent.com/84048306/149637241-2732624a-4024-4f28-8901-ba93dc4b42eb.png)
+
+
+
+
   </details>
